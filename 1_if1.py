@@ -13,13 +13,37 @@
 * Вывести содержимое переменной на экран
 
 """
+while True:
+    def main():
+        """
+        Эта функция вызывается автоматически при запуске скрипта в консоли
+        В ней надо заменить pass на ваш код
+        """
+        vvod_vozrast=""
+        while not vvod_vozrast.isdigit():
+            vvod_vozrast = input("Введите ваш возраст: ")
+            vvod=vvod_vozrast
+            if vvod.isdigit():
+                vvod= (int(vvod))
+            else:
+                print("Пожалуйста, введите целое положительное число")      
+            
+        def vozrast(years):
+          
+            if years > 0 and years <=7:
+                rezult = str("Вам нужно идти в детский сад")
+            elif years >7 and years <=17:
+                rezult = str("Вам нужно учиться в школе")
+            elif years >17 and years <=23:
+                rezult = str("Вам нужно учиться в ВУЗе")
+            elif years >23: 
+                rezult=str("Пора работать")
+            else:
+                rezult=str("Неверноый ввод")
+                
+            return rezult
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-
-if __name__ == "__main__":
-    main()
+        rez=vozrast(vvod)
+        print(rez)
+    if __name__ == "__main__":
+        main()
