@@ -15,7 +15,7 @@
 import logging
 import ephem
 import datetime
-
+import settings
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
@@ -59,7 +59,7 @@ def otvet_planet(update, context):
     update.message.reply_text(result)
 
 def main():
-    mybot = Updater("8052878313:AAG-ovb-tg1bVF9aTDhEuaPJOnwUbcao59U", use_context=True)
+    mybot = Updater(settings.API_KEY, use_context=True)
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
     dp.add_handler(CommandHandler("planet", otvet_planet))
